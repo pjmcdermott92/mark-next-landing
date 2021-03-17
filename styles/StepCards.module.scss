@@ -1,0 +1,49 @@
+@import './styles';
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.card {
+    max-width: 350px;
+    padding: .5rem;
+    background-color: $color-off-white;
+
+    p {
+        margin: 1rem 0;
+        text-align: left;
+        font-size: calc(.85rem + .25vw);
+    }
+
+    h2 {
+        margin: 0 0 2rem;
+        text-align: center;
+        color: $color-blue-light;
+    }
+
+    h3 {
+        padding: 1rem 0;
+        margin: 1.5rem;
+        border-top: 2px solid $font-color-med;
+        border-bottom: 2px solid $font-color-med;
+        color: $color-blue-light;
+        font-weight: 700;
+        text-align: center;
+    }
+}
+
+.step {
+    margin-bottom: 1rem;
+    font-weight: 900;
+    color: $color-blue-dark;
+}
+
+.image {
+    width: 100%; height: 150px; margin-bottom: 1rem;
+
+    img { width: 100%; height: 100%; }
+}

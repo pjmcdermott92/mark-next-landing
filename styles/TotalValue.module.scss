@@ -1,0 +1,46 @@
+@import './styles';
+
+.valuesection {
+    padding: 1rem .125rem 0;
+    font-size: calc(0.65rem + .5vw);
+}
+
+.values {
+    text-align: left;
+    margin: 1rem 0;
+    padding: 0 1rem;
+
+    li > div {
+        display: flex;
+        justify-content: space-between;
+        margin: .5rem 0;
+    }
+}
+
+.value { color: $color-red-dark; font-weight: 700; }
+.bonusli { list-style: none; }
+.bonus {
+    display: inline-block;
+    margin: .25rem;
+    padding: .25rem;
+    background-color: $color-red-dark;
+    color: $font-color-light;
+    font-size: .85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.attentiongrabber {
+    margin: 0;
+    margin-bottom: -2rem;
+    color: $color-red-dark;
+    font-weight: 700;
+    font-size: calc(1rem + 2vw);
+    text-align: center;
+}
+
+@media (min-width: 500px) {
+    .valuesection { padding: 1rem 1rem 0; }
+    .attentiongrabber { font-size: calc(3rem + 2vw); }
+}

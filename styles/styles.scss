@@ -1,0 +1,113 @@
+// GLOBAL VARIABLES
+
+$base-font-size: 16px;
+$font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+$font-color-dark: #666;
+$font-color-med: #CCC;
+$font-color-light: #FFF;
+
+$color-off-white: #EEE;
+$color-blue-dark: #002461;
+$color-blue-light: #133772;
+$color-sky-blue: #cae1ff;
+$color-purple-light: #bcbcf7;
+$color-red-dark: #F00;
+$color-red-med: #DB5151;
+$color-red-light: #E1756B;
+$color-black: #000;
+
+$box-shadow: 0px 4px 20px rgba(0,0,0,0.15);
+
+// LAYOUT STYLING CLASSES
+
+.flex-parent {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  
+  &.nowrap { flex-wrap: nowrap; }
+  .flex-lg { width: 100%; max-width: 700px; padding: 1rem; }
+  .flex-md { width: 100%; max-width: 450px; padding: 1rem; }
+  .flex-sm { width: 100%; max-width: 400px; padding: 1rem; }
+  .flex-xs { width: 100%; max-width: 300px; padding: 1rem; }
+  .flex-grow { flex-grow: 1; }
+}
+
+.responsive-item {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* For 16:9 aspect */
+  overflow: hidden;
+  
+  * {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+
+  iframe { border: none; }
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  box-shadow: $box-shadow;
+  
+  .inner-content { padding: 1rem 1.5rem; }    
+  .narrow-content { max-width: 1000px; margin: 0 auto; }
+}
+
+.accent-box {
+  border: 4px solid; width: 100%;
+  margin-bottom: 2rem;
+
+  .box-header, .box-footer {
+      padding: 1 rem;
+      background-color: $color-blue-dark;
+      color: $font-color-light;
+      text-align: center;
+
+      span { display: block;}
+
+      .header { font-size: calc(2rem + 1.5vw); font-weight: 700; }
+  }
+  
+  &.box-red { border-color: $color-red-dark; }
+  &.box-blue { border-color: $color-blue-dark; }
+}
+
+// CONTENT STYLE CLASSES
+
+ul.red-check {
+    list-style-image: url('../public/images/check-mark.svg');
+    color: $color-blue-light;
+
+    li { padding: .5rem 0; }
+  }
+
+.has-shadow { box-shadow: $box-shadow; }
+.text-blue { color: $color-blue-light; }
+.text-red { color: $color-red-dark; }
+.highlight { background-color: #f5f59e; }
+
+.accent-header {
+    margin: .5rem 0;
+    font-weight: 900;
+    line-height: .9;
+    text-align: center;
+    color: $color-blue-light;
+
+    &.text-red { color: $color-red-dark; }
+    
+    &.size-md { font-size: calc(1.3rem + 1.1vw); }
+    &.size-lg { font-size: calc(2.5rem + 1.5vw); }
+    &.size-xl { font-size: calc(2.5rem + 2.5vw); }
+}
+.center { text-align: center; }
+.large-font { font-size: calc(1.8rem + .5vw); }

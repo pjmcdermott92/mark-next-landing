@@ -1,0 +1,179 @@
+@import './styles';
+
+.above-fold-wrapper {
+    position: relative;
+    padding: 16rem 1rem 1rem;
+    margin-top: -15rem;
+    margin-bottom: 1rem;
+    background-color: $color-blue-dark;
+    background: linear-gradient(to bottom, $color-blue-dark 0%, $color-blue-light 100%);
+    color: $font-color-light;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 3rem;
+        left: 0;
+        background: {
+            image: url('../public/images/waves-bg.svg');
+            repeat: no-repeat;
+            position: bottom;
+        }
+        opacity: 0.05;
+    }
+
+    .container { max-width: 1250px; }
+}
+
+.proem-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 1rem 0 2rem;
+    text-align: center;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 1.6rem;
+        left: 0;
+        background: {
+            image: url('../public/images/proem-underline.svg');
+            repeat: no-repeat;
+            size: 85%;
+            position: bottom center;
+        }
+    }
+
+    span {
+        position: relative;
+        display: block;
+        line-height: .8;
+        text-shadow: 0 0 8px $color-black;
+        z-index: 1 }
+
+    .proem-text-small { font-size: calc(.6rem + .5vw); }
+    .proem-text-medium { font-size: calc(1.6rem + 2vw); font-weight: 700; }
+    .proem-text-large { font-size: calc(1.1rem + 3vw); font-weight: 900; }
+}
+
+.hero-section {
+    position: relative;
+    font-size: calc(1rem + .25vw);
+    text-align: center;
+    z-index: 1;
+
+    .flex-parent { align-items: flex-start; }
+}
+
+.hero-video {
+    width: 100%;
+    margin-top: .5rem;
+}
+
+.hero-action {
+    width: 100%;
+    padding: 1rem;
+    background-color: #00000035;
+
+    .spacer {
+        width: 150px;
+        height: 3px;
+        background-color: $color-red-med;
+    }
+}
+
+// SPECIFIC ITEMS
+.question-section-intro {
+    margin-bottom: 2rem;
+    .question-mark { display: none; width: 250px; height: 200px; padding-right: 2rem; }
+    .question-intro-text {
+        padding: 1rem 0;
+        line-height: .95;
+        letter-spacing: -2px;
+        text-align: center;
+        border-top: 2px solid $font-color-med;
+        border-bottom: 2px solid $font-color-med;
+        color: $color-blue-light;
+
+        h1, h2, h3 { margin: 0; }
+        .question-text-lg { font-size: calc(1.2rem + 2vw); font-weight: 700; }
+        .question-text-xl { font-size: calc(2.5rem + 2vw); font-weight: 900; color: $color-blue-dark; }
+    }
+}
+
+.questionaire-section-box {
+    width: 100%;
+    max-width: 1000px;
+    margin: 1rem auto;
+    padding: .5rem 1rem;
+    border: 2px solid $color-purple-light;
+    background-color: $color-sky-blue;
+
+    div { margin: 2rem 0;}
+}
+
+.parallax-box {
+    position: relative;
+    padding: 1rem;
+    color: $font-color-light;
+    min-height: 250px;
+
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: {
+            image: url('../public/images/secret-badge.webp');
+            repeat: no-repeat;
+            position: top right;
+            size: 30%;
+            attachment: fixed;
+        }
+    }
+
+    div { z-index: 1;}
+
+    &.light { background-color: $color-red-light;}
+    &.dark { background-color: $color-red-light;}
+
+    p {
+        margin: 0;
+        line-height: 1;
+        font-size: 2rem;
+
+        &.med { font-size: calc(2rem + 2vw); font-weight: 700; }
+        &.large { font-size: calc(1.8rem + 2vw); font-weight: 900; }
+    }
+}
+
+@media (min-width: 768px) {
+    .parallax-box::after { content: ''; }
+    .proem-wrapper {
+        &::after {
+            background: {
+                size: 65%;
+                position: 50% 105%;
+            }
+        }
+        .proem-text-small { font-size: calc(.95rem + 1vw); }
+        .proem-text-medium { font-size: calc(1.9rem + 3vw); }
+        .proem-text-large { font-size: calc(4.8rem + 1.2vw); }
+    }
+    .question-section-intro .question-mark { display: block; }
+}
+
+@media (min-width: 865px ) {
+    .hero-video { max-width: 60%; }
+    .hero-action { max-width: 35%; }
+}
+
+@media (min-width: 1500px ) {
+    .hero-video { max-width: 750px; }
+    .hero-action { max-width: 450px; }
+}
